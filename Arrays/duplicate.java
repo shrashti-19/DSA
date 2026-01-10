@@ -1,5 +1,5 @@
 public class duplicate{
-    public static int find(int arr[]){
+    public static int find(int nums[]){
         // int duplicate1 = -1;
         // for(int i=0 ; i<arr.length ; i++){
         //     for(int j=i+1 ; j<arr.length ; j++){
@@ -9,18 +9,16 @@ public class duplicate{
         //     }
         // }
         // return duplicate1;
-        int duplicate1 =-1;
-        int[] freq = new int[arr.length];
-        for(int num : arr){
-            freq[num]++;
-        }
+         boolean[] bool = new boolean[nums.length];
 
-        for(int i=0 ;i<freq.length ; i++){
-            if(freq[i]>1){
-                duplicate1 = i;
+        for(int i: nums){
+            if(bool[i]){
+                //if it's true then it's the duplicate number
+                return i;
             }
+            bool[i] = true;
         }
-        return duplicate1;
+        return -1;
         
     }
     public static void main(String[] args) {
