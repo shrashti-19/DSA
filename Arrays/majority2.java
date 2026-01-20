@@ -61,7 +61,7 @@ public class majority2{
         if(cnt3>n/3){
             result.add(cnd1);
         }
-        if(cnt4>n/3){
+        if(cnt4>n/3 && cnd2!=cnd1){
             result.add(cnd2);
         }
 
@@ -76,7 +76,7 @@ public class majority2{
 
     }
     public static void main(String args[]){
-        int arr[] = {3,2,3};
+        int arr[] = {0,0,0};
         List<Integer> ans  = maj2(arr);
         for(int num : ans){
             System.out.println(num + " ");
