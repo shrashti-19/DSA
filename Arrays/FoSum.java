@@ -24,10 +24,10 @@ public class FoSum{
         int n= nums.length;
         List<List<Integer>> result = new ArrayList<>();
 
-        for(int i=0 ; i<n ;i++){
+        for(int i=0 ; i<n-3 ;i++){
             if(i>0 && nums[i-1]==nums[i]) continue;
 
-            for(int j=i+1 ; j<n ; j++){
+            for(int j=i+1 ; j<n-2 ; j++){
                 if(j>i+1 && nums[j-1]==nums[j]) continue;
 
                 int left = j+1, right = n-1;
