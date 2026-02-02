@@ -1,15 +1,32 @@
-public class countXOR{
-    public static int count(int arr[], int target){
-        int count  =0;
-        for(int i=0 ; i<arr.length; i++){
-            int xor=0;
-            for(int j=i ; j<arr.length ; j++){
-                xor=xor^arr[j];
 
-                if(target==xor){
-                    count++;
-                }
+import java.util.HashMap;
+
+public class countXOR{
+    public static int count(int arr[], int k){
+        // int count  =0;
+        // for(int i=0 ; i<arr.length; i++){
+        //     int xor=0;
+        //     for(int j=i ; j<arr.length ; j++){
+        //         xor=xor^arr[j];
+
+        //         if(target==xor){
+        //             count++;
+        //         }
+        //     }
+        // }
+        // return count;
+        int count =0;
+        int prefixxor = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0,1);
+        for(int num : arr){
+            prefixxor = prefixxor^num;
+
+            int target = prefixxor^k;
+            if(map.containsKey(target)){
+                count+=map.get(target);
             }
+            map.put(prefixxor, map.getOrDefault(prefixxor, 0)+1);
         }
         return count;
     }
