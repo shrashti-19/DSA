@@ -27,7 +27,7 @@ public class substringLong{
         HashSet<Character> set = new HashSet<>();
         for(int i = 0 ;i<s.length() ; i++){
             while(set.contains(s.charAt(i))){
-                set.remove(s.charAt(i));
+                set.remove(s.charAt(left));
                 left++;
             }
 
@@ -38,7 +38,7 @@ public class substringLong{
         
     }
     public static void main(String args[]){
-        String s = "abcddabac";
+        String s = "pwwkew";
         System.out.println(countSubstringLength(s));
     }
 }
