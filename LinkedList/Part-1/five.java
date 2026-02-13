@@ -16,13 +16,24 @@ public class five{
         Node tail = dummy;
 
         while(curr1!=null || curr2!=null){
-            int sum = curr1.data + curr2.data + carry;
+            int val1=0, val2=0;
+            if(curr1!=null){
+                val1 = curr1.data;
+            }
+            if(curr2!=null){
+                val2 = curr2.data;
+            }
+            int sum = val1 + val2 + carry;
             int digit = sum%10;
             carry = sum/10;
             tail.next = new Node(digit);
             tail = tail.next;
-            curr1 = curr1.next;
-            curr2 = curr2.next;
+            if(curr1!=null) curr1 = curr1.next;
+            if(curr2!=null) curr2 = curr2.next;
+        }
+
+        if(carry>0){
+            tail.next = new Node(carry);
         }
         return dummy.next;
 
