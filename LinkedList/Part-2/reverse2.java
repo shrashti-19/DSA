@@ -14,8 +14,9 @@ public class reverse2{
 
         Node temp = head;
         for(int i=0 ; i<k ; i++){
-            temp = temp.next;
             if(temp==null) return head;
+            temp = temp.next;
+            
         }
 
         Node curr = head;
@@ -34,10 +35,10 @@ public class reverse2{
     public static void main(String args[]){
         Node head = new Node(1);
         head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
-        int k = 3;
+        // head.next.next = new Node(3);
+        // head.next.next.next = new Node(4);
+        // head.next.next.next.next = new Node(5);
+        int k = 2;
         Node ans = reverseK(head,k);
         Node temp = ans;
         while(temp!=null){
