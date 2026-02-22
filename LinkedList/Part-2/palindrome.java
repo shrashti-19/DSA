@@ -9,7 +9,7 @@ public class palindrome{
         }
     }
     public static boolean isPalindrome(Node head){
-        if(head == null) return true;
+        if(head == null || head.next == null) return true;
 
         Node slow = head;
         Node fast = head;
