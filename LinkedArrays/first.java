@@ -9,6 +9,7 @@ public class first{
         }
     }
     public static Node rotateByK(Node head, int k){
+        if(head == null || head.next == null) return head;
         int count = 0;
         Node temp = head;
         Node lastNode = null;
