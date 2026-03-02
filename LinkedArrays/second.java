@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class second{
-    public static class Node{
+    static class Node{
         int data;
         Node next;
         Node random;
