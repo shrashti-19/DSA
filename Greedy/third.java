@@ -7,9 +7,9 @@ public class third{
         int lastend = pairs[0][1];
 
         for(int i=1 ; i<pairs.length ; i++){
-            if(pairs[i][1]>lastend){
+            if(pairs[i][0]>lastend){
                 length++;
-                lastend = pairs[i][0];
+                lastend = pairs[i][1];
             }
         }
         return length;
