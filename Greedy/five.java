@@ -11,11 +11,12 @@ public class five{
              }
              if(amount==0) break;
         }
+        if(amount!=0) return -1;
         return size;
     }
     public static void main(String args[]){
-        int coins[] = {1,2,5,10,20,50};
-        int amount = 87;
+        int coins[] = {2};
+        int amount = 3;
         System.out.println("Minimum number of coins need to cover the amount : " + coinChange(coins, amount));
     }
 }
