@@ -1,20 +1,17 @@
+import java.util.*;
+
 public class one{
     public static boolean containsDuplicate(int[] nums) {
-        int n = nums.length;
-        boolean[] duplicates = new boolean[n+1];
-        //int dup = -1;
+        HashSet<Integer> set = new HashSet<>();
         for(int i : nums){
-            if(duplicates[i]){
-                return true;
-            }
-            duplicates[i] = true;
+            if(set.contains(i)) return true;
+            set.add(i);
         }
-
-        return false;  
+        return false; 
     }
 
     public static void main(String args[]){
-        int arr[] = {1,2,3};
+        int arr[] = {3,3};
         System.out.println(containsDuplicate(arr));
     }
 }
