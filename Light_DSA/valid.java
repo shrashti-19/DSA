@@ -1,22 +1,22 @@
-import java.util.*;
 
 public class valid{
     public static boolean validAnagram(String s, String t){
-        if(s.length()!=t.length()) return false;
-
-        char[] s1 = s.toCharArray();
-        char[] t1 = t.toCharArray();
-
-        Arrays.sort(s1);
-        Arrays.sort(t1);
-
-        return Arrays.equals(s1,t1);
+       int[]cnt = new int[26];
+       if(s.length()!=t.length()) return false;
+       for(int i=0 ; i<s.length() ; i++){
+          cnt[s.charAt(i)-'a']++;
+          cnt[t.charAt(i)-'a']--;
+       }
+       for(int num : cnt){
+        if(num!=0) return false;
+       }
+       return true;
 
 
     }
     public static void main(String args[]){
         String s = "anagram";
         String t = "nagaram";
-        System.out.println("Valid Anagram or not " + validAnagram(s,t));
+        System.out.println("Valid Anagram or not : " + validAnagram(s,t));
     }
 }
