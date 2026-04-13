@@ -2,7 +2,7 @@ public class nthRoot{
     public static int Root(int n, int m){
         int low = 0;
         int high = m;
-        while(low<high){
+        while(low<=high){
             int mid = low  +(high-low)/2;
             long power = (long)Math.pow(mid, n);
             if(power == m) return mid;
