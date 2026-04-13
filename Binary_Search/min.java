@@ -1,5 +1,6 @@
 public class min{
     public static int findMin(int[] nums) {
+        //searching for an element but eliminating the possivle halves
         int low = 0;
         int high = nums.length-1;
         while(low<high){
