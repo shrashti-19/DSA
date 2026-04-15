@@ -1,0 +1,38 @@
+
+import java.util.Arrays;
+
+public class magnetic{
+    public static int maxDistance(int[] position, int m) {
+        Arrays.sort(position);
+        int low = 1;
+        int high = position[position.length-1] - position[0];
+        int ans = 0;
+        while(low<=high){
+            int mid = low + (high-low)/2;
+            if(isPossible(position, m, mid)){
+                ans = mid;
+                low = mid+1;
+            }else{
+                high = mid-1;
+            }
+        }
+        return ans;
+    }
+    public static boolean isPossible(int[]position, int m, int dist){
+        int count = 1;
+        int last = position[0];
+        for(int i=1 ; i<position.length ; i++){
+            if(position[i]-last>=dist){
+                count++;
+                last = position[i];
+            }
+            if(count == m) return true;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        int position[] = {1,2,3,4,7};
+        int m = 3;
+        System.out.println("Min distance between two balls" + maxDistance(position, m) );
+    }
+}
