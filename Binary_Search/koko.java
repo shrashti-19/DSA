@@ -12,7 +12,7 @@ public class koko{
             int mid = low + (high-low)/2;
             if(isPossible(piles,n,h,mid)){
                 ans = mid;
-                high = mid-1;
+                high = mid-1; //min integer return
             }else{
                 low = mid+1;
             }
